@@ -9,7 +9,11 @@ DP = {}
 -- EXPRESSIONS --
 
 DP.Expressions = {
-    ["Angry"] = {
+    ["Aiming"] = {
+        "Expression",
+        "mood_aiming_1"
+    },
+	["Angry"] = {
         "Expression",
         "mood_angry_1"
     },
@@ -20,6 +24,10 @@ DP.Expressions = {
     ["Crying"] = {
         "Expression",
         "console_wasnt_fun_end_loop_floyd_facial"
+    },
+    ["Dead"] = {
+        "Expression",
+        "dead_1"
     },
     ["Drunk"] = {
         "Expression",
@@ -196,6 +204,9 @@ DP.Walks = {
     ["Chubbyfemale"] = {
         "move_f@chubby@a",
         "Chubby Female"
+     },
+    ["Crouched"] = {
+        "move_ped_crouched",
     },
     ["Defaultfemale"] = {
         "move_f@multiplayer",
@@ -219,21 +230,25 @@ DP.Walks = {
     ["Drunk"] = {
         "move_m@drunk@a"
     },
-    ["Drunk2"] = {
-        "move_m@drunk@slightlydrunk",
-        "Drunk 2 Slightly"
+	 ["Drunk2"] = {
+        "move_m@buzzed",
+		"Drunk 2 - Buzzed"
     },
     ["Drunk3"] = {
-        "move_m@buzzed",
-        "Drunk 3 Buzzed"
+        "move_m@drunk@moderatedrunk",
+        "Drunk 3 - Moderate"
     },
     ["Drunk4"] = {
-        "move_m@drunk@moderatedrunk",
-        "Drunk 4 Moderate"
+        "move_m@drunk@moderatedrunk_head_up",
+        "Drunk 4 - Moderate 2"
     },
     ["Drunk5"] = {
+        "move_m@drunk@slightlydrunk",
+        "Drunk 5 - Slightly Drunk"
+    },
+    ["Drunk6"] = {
         "move_m@drunk@verydrunk",
-        "Drunk 5 Very Drunk"
+        "Drunk 6 - Very Drunk"
     },
     ["Fat"] = {
         "move_m@fat@a",
@@ -331,6 +346,11 @@ DP.Walks = {
         "move_m@hiking",
 
     },
+    ["Hiking2"] = {
+        "move_f@hiking",
+		"Hiking 2"
+
+    },
     ["Hipster"] = {
         "move_m@hipster@a"
     },
@@ -345,10 +365,26 @@ DP.Walks = {
     ["Hurry"] = {
         "move_m@hurry@a",
         "Hurry Male"
-     },
+    },
     ["Hurry2"] = {
         "move_f@hurry@a",
         "Hurry Female"
+    },
+    ["Injured2"] = {
+        "move_f@injured",
+        "Injured 2 - Female"
+    },
+    ["Intimidation"] = {
+        "move_m@intimidation@1h",
+        "Intimidation"
+    },
+    ["Intimidation2"] = {
+        "move_m@intimidation@cop@unarmed",
+        "Intimidation 2"
+    },
+    ["Intimidation3"] = {
+        "move_m@intimidation@unarmed",
+        "Intimidation 3"
     },
     ["Janitor"] = {
         "move_p_m_zero_janitor"
@@ -359,6 +395,9 @@ DP.Walks = {
     },
     ["Jog"] = {
         "move_m@jog@"
+    },
+    ["Nervous"] = {
+        "move_characters@jimmy@nervous@"
     },
     ["Lamar"] = {
         "anim_group_move_lemar_alley"
@@ -400,8 +439,20 @@ DP.Walks = {
         "Sad Male"
     },
     ["Sad2"] = {
+        "move_m@sad@b",
+        "Sad Male 2"
+    },
+    ["Sad3"] = {
+        "move_m@sad@c",
+        "Sad Male 3"
+    },
+    ["Sad4"] = {
         "move_f@sad@a",
         "Sad Female"
+    },
+    ["Sad5"] = {
+        "move_f@sad@b",
+        "Sad Female 2"
     },
     ["Sassy"] = {
         "move_m@sassy"
@@ -950,6 +1001,88 @@ DP.Shared = {
             xRot = 0.0000,
             yRot = 0.0000,
             zRot = 94.0000,
+        }
+    },
+	["liftme"] = { -- Male Custom emote by -Moses-
+        "couplepose1pack1anim2@animation",
+        "couplepose1pack1anim2_clip",
+        "Lift Me",
+        "liftme2",
+        AnimationOptions = {
+            EmoteLoop = true,
+        }
+    },
+    ["liftme2"] = { -- Female Custom emote by -Moses-
+        "couplepose1pack1anim1@animation",
+        "couplepose1pack1anim1_clip",
+        "Lift Me 2",
+        "liftme",
+        AnimationOptions = {
+            EmoteMoving = false,
+            EmoteLoop = true,
+            Attachto = true,
+            bone = 0,
+            xPos = 0.0020,
+            yPos = 0.2870,
+            zPos = 0.2500,
+            xRot = 0.0000,
+            yRot = 0.0000,
+            zRot = 180.0000,
+        }
+    },
+	["liftme3"] = { -- Male Custom emote by -Moses-
+        "couplepose2pack1anim2@animation",
+        "couplepose2pack1anim2_clip",
+        "Lift Me 3",
+        "liftme4",
+        AnimationOptions = {
+            EmoteMoving = false,
+            EmoteLoop = true,
+        }
+    },
+    ["liftme4"] = { -- Female Custom emote by -Moses-
+        "couplepose2pack1anim1@animation",
+        "couplepose2pack1anim1_clip",
+        "Lift Me 4",
+        "liftme3",
+        AnimationOptions = {
+            EmoteMoving = false,
+            EmoteLoop = true,
+            Attachto = true,
+            bone = 0,
+            xPos = 0.0100,
+            yPos = 0.4800,
+            zPos = 0.5300,
+            xRot = 0.0000,
+            yRot = 0.0000,
+            zRot = 180.0000,
+        }
+    },
+	["liftme5"] = { -- Male Custom emote by -Moses-
+        "couplepose3pack1anim2@animation",
+        "couplepose3pack1anim2_clip",
+        "Lift Me 5",
+        "liftme6",
+        AnimationOptions = {
+            EmoteLoop = true,
+        }
+    },
+    ["liftme6"] = { -- Female Custom emote by -Moses-
+        "couplepose3pack1anim1@animation",
+        "couplepose3pack1anim1_clip",
+        "Lift Me 6",
+        "liftme5",
+        AnimationOptions = {
+            EmoteMoving = false,
+            EmoteLoop = true,
+            Attachto = true,
+            bone = 0,
+            xPos = -0.2120,
+            yPos = -0.5400,
+            zPos = -0.1000,
+            xRot = 0.0000,
+            yRot = 0.0000,
+            zRot = 0.0000,
         }
     },
     ["csdog"] = {
@@ -7636,6 +7769,60 @@ DP.Emotes = {
         "sitdownonknees@queensisters",
         "sitdown_clip",
         "Model 2",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+       }
+    },
+	["layncry"] = {
+        "anim@amb@nightclub@lazlow@lo_sofa@",
+        "lowsofa_dlg_fuckedup_laz",
+        "Lay & Cry",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+       }
+    },
+	["layncry2"] = {
+        "anim@amb@nightclub@lazlow@lo_sofa@",
+        "lowsofa_base_laz",
+        "Lay & Cry 2",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+       }
+    },
+	["layncry3"] = {
+        "anim@amb@nightclub@lazlow@lo_sofa@",
+        "lowsofa_dlg_notagain_laz",
+        "Lay & Cry 3",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+       }
+    },
+	["layncry4"] = {
+        "anim@amb@nightclub@lazlow@lo_sofa@",
+        "lowsofa_dlg_notagain_laz",
+        "Lay & Cry 4",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+       }
+    },
+	["layncry5"] = {
+        "anim@amb@nightclub@lazlow@lo_sofa@",
+        "lowsofa_dlg_shit2strong_laz",
+        "Lay & Cry 5",
+        AnimationOptions = {
+            EmoteLoop = true,
+            EmoteMoving = false,
+       }
+    },
+	["layncry6"] = {
+        "misschinese2_crystalmaze",
+        "2int_loop_a_taocheng",
+        "Lay & Cry 6",
         AnimationOptions = {
             EmoteLoop = true,
             EmoteMoving = false,
@@ -14799,6 +14986,35 @@ DP.PropEmotes = {
                 -1.4385
             },
             EmoteLoop = true,
+        }
+    },
+	["crackhead"] = {
+        "special_ped@zombie@base",
+        "base",
+        "Crack Head",
+        AnimationOptions = {
+            Prop = 'prop_cs_bowie_knife', -- Knife 
+            PropBone = 28422, -- Right Wrist 
+            PropPlacement = {
+                -0.1280,
+                -0.0220,
+                 0.0210,
+                -150.0005,
+                179.9989,
+				-30.0105
+            },
+            SecondProp = 'ng_proc_cigpak01a',
+            SecondPropBone = 26614,
+            SecondPropPlacement = {
+                0.010,
+                -0.0190,
+                0.0920,
+                -82.4073,
+                178.6009,
+				29.9195
+            },
+            EmoteLoop = true,
+            EmoteMoving = true,
         }
     },
 
